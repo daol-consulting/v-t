@@ -144,10 +144,11 @@ body {
     color: white;
     flex: 1;
     min-width: 150px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .yes-btn:hover {
-    transform: scale(1.05);
+    animation: growOnHover 1s ease infinite;
     box-shadow: 0 6px 20px rgba(255, 107, 157, 0.4);
 }
 
@@ -157,6 +158,15 @@ body {
 
 .yes-btn.growing {
     animation: grow 0.5s ease forwards;
+}
+
+@keyframes growOnHover {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
 }
 
 @keyframes grow {
@@ -255,6 +265,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    gap: 20px;
 }
 
 .memory-video {
@@ -262,28 +274,35 @@ body {
     height: 80vh;
     max-width: calc(80vh * 9 / 16);
     max-height: 80vh;
+    min-width: calc(80vh * 9 / 16);
+    aspect-ratio: 9 / 16;
     border-radius: 20px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     background: #000;
     object-fit: contain;
+    flex-shrink: 0;
 }
 
 .skip-button {
-    margin-top: 20px;
+    margin-top: 0;
     padding: 12px 30px;
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
     border: 2px solid white;
     border-radius: 25px;
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s ease;
     font-weight: bold;
+    flex-shrink: 0;
+    white-space: nowrap;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .skip-button:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 1);
     transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 
 /* 모바일 대응 */
@@ -339,14 +358,24 @@ body {
     
     .video-container {
         padding: 10px;
+        max-height: 95vh;
+        gap: 15px;
     }
     
     .memory-video {
-        width: 90vw;
+        width: 85vw;
         height: auto;
-        max-width: 90vw;
-        max-height: 85vh;
+        max-width: 85vw;
+        max-height: calc(95vh - 80px);
         aspect-ratio: 9 / 16;
+        flex-shrink: 0;
+    }
+    
+    .skip-button {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+        margin-top: 0;
+        flex-shrink: 0;
     }
 }
 

@@ -387,10 +387,10 @@ export default function ValentinePage() {
       
       if (noBtnClickCountRef.current >= 3) {
         const messages = [
-          "정말로요? 😢",
-          "다시 생각해볼까요? 💭",
-          "마지막 기회예요! 🥺",
-          "제발... 🙏"
+          "진짜로? 😢",
+          "다시 생각해볼까요 우리? 💭",
+          "안돼애애ㅐ애ㅐ애애애ㅐ! 🥺",
+          "제발...또르르 🙏"
         ]
         
         const randomMessage = messages[Math.floor(Math.random() * messages.length)]
@@ -442,7 +442,7 @@ export default function ValentinePage() {
       <div className="container" ref={containerRef}>
         <div className="content">
           <h1 className="title">Will you be my Valentine? 💕</h1>
-          <p className="subtitle">오늘 하루 특별한 사람이 되어주실래요?</p>
+          <p className="subtitle">오늘 하루 특별한 사람이 되어주실래요? 그래야 나와 함께 하루를 보낼 수 있어요!💕</p>
 
           <div className="buttons-container">
             <button
@@ -570,7 +570,7 @@ export default function ValentinePage() {
         <div className="celebration">
           <div className="celebration-content">
             <h2>Yay! 🎉</h2>
-            <p>가장 행복한 발렌타인 데이가 될 거예요! 💕</p>
+            <p>오늘 하루 인생에서 가장 행복한 발렌타인 데이를 보내보자요!!! 💕</p>
             <p className="love-message">사랑해요! ❤️</p>
           </div>
         </div>
