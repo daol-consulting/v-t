@@ -1,0 +1,358 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.hearts-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.heart {
+    position: absolute;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.6);
+    animation: float 6s ease-in-out infinite;
+}
+
+.heart:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.heart:nth-child(2) {
+    left: 30%;
+    animation-delay: 1s;
+}
+
+.heart:nth-child(3) {
+    left: 50%;
+    animation-delay: 2s;
+}
+
+.heart:nth-child(4) {
+    left: 70%;
+    animation-delay: 3s;
+}
+
+.heart:nth-child(5) {
+    left: 90%;
+    animation-delay: 4s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.content {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 30px;
+    padding: 40px 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.title {
+    font-size: 2.5rem;
+    color: #d63384;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.buttons-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.btn {
+    padding: 18px 40px;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 100;
+}
+
+.yes-btn {
+    background: linear-gradient(135deg, #ff6b9d, #ff8fab);
+    color: white;
+    flex: 1;
+    min-width: 150px;
+}
+
+.yes-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 107, 157, 0.4);
+}
+
+.yes-btn:active {
+    transform: scale(0.95);
+}
+
+.yes-btn.growing {
+    animation: grow 0.5s ease forwards;
+}
+
+@keyframes grow {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.3);
+    }
+    100% {
+        transform: scale(1.5);
+    }
+}
+
+.no-btn {
+    background: linear-gradient(135deg, #95a5a6, #7f8c8d);
+    color: white;
+    flex: 1;
+    min-width: 150px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.no-btn:hover {
+    transform: scale(1.05);
+}
+
+.no-btn.escaping {
+    transition: all 0.3s ease;
+}
+
+.celebration {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.5s ease;
+}
+
+.celebration.hidden {
+    display: none;
+}
+
+.celebration-content {
+    background: white;
+    padding: 50px 40px;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    animation: scaleIn 0.5s ease;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.celebration-content h2 {
+    font-size: 3rem;
+    color: #d63384;
+    margin-bottom: 20px;
+}
+
+.celebration-content p {
+    font-size: 1.5rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.love-message {
+    font-size: 2rem !important;
+    color: #ff6b9d !important;
+    font-weight: bold;
+    margin-top: 20px !important;
+}
+
+.video-container {
+    max-width: 90vw;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.memory-video {
+    width: auto;
+    height: 80vh;
+    max-width: calc(80vh * 9 / 16);
+    max-height: 80vh;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    background: #000;
+    object-fit: contain;
+}
+
+.skip-button {
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.skip-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+/* 모바일 대응 */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .buttons-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .btn {
+        padding: 20px;
+        font-size: 1.2rem;
+    }
+    
+    .yes-btn {
+        width: 100%;
+    }
+    
+    .no-btn {
+        width: auto;
+        min-width: 150px;
+    }
+    
+    .content {
+        padding: 30px 20px;
+        margin: 20px;
+    }
+    
+    .celebration-content {
+        padding: 40px 30px;
+        margin: 20px;
+    }
+    
+    .celebration-content h2 {
+        font-size: 2.5rem;
+    }
+    
+    .celebration-content p {
+        font-size: 1.2rem;
+    }
+    
+    .love-message {
+        font-size: 1.5rem !important;
+    }
+    
+    .video-container {
+        padding: 10px;
+    }
+    
+    .memory-video {
+        width: 90vw;
+        height: auto;
+        max-width: 90vw;
+        max-height: 85vh;
+        aspect-ratio: 9 / 16;
+    }
+}
+
+@keyframes confettiFall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
