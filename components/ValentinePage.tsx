@@ -441,8 +441,8 @@ export default function ValentinePage() {
 
       <div className="container" ref={containerRef}>
         <div className="content">
-          <h1 className="title">Will you be my Valentine? 💕</h1>
-          <p className="subtitle">오늘 하루 특별한 사람이 되어주실래요? 그래야 나와 함께 하루를 보낼 수 있어요!💕</p>
+          <h1 className="title">채니채니뱅뱅 ♥️ Will you be my Valentine? 💕</h1>
+          <p className="subtitle">내사랑 채니 오늘 하루 특별한 사람이 되어주실래요? 그래야 나와 함께 하루를 보낼 수 있어요!💕</p>
 
           <div className="buttons-container">
             <button
