@@ -255,6 +255,31 @@ body {
     margin-top: 20px !important;
 }
 
+.replay-hint {
+    font-size: 1.1rem !important;
+    color: #888 !important;
+    margin-top: 25px !important;
+    margin-bottom: 8px !important;
+}
+
+.replay-button {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #ff6b9d, #ff8fab);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 107, 157, 0.3);
+}
+
+.replay-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 107, 157, 0.4);
+}
+
 .video-container {
     max-width: 90vw;
     max-height: 90vh;
@@ -354,6 +379,15 @@ body {
     
     .love-message {
         font-size: 1.5rem !important;
+    }
+    
+    .replay-hint {
+        font-size: 1rem !important;
+    }
+    
+    .replay-button {
+        padding: 14px 28px;
+        font-size: 0.95rem;
     }
     
     .video-container {
